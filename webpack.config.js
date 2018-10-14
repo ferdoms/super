@@ -10,7 +10,9 @@ useDefaultConfig[env].resolve.alias = {
     "@pages":  path.resolve( "./src/pages/" ),
     "@providers":  path.resolve( "./src/providers/" ),
     "@tests":  path.resolve( "./src/*" ),        
-    "@theme":  path.resolve( "./src/theme/" )
+    "@theme":  path.resolve( "./src/theme/" ),
+    "@interfaces":  path.resolve( "./src/interfaces/" ),
+    "@models":  path.resolve( "./src/models/" ),
 
 };
 

@@ -10,29 +10,45 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ExercisesProvider } from '../providers/exercises/exercises';
+import { IonicStorageModule } from '@ionic/storage';
+import { WorkoutModel } from '@models/workoutModel';
+import { Model } from '@providers/model';
+import { WorkoutProvider } from '../providers/workout/workout';
+import { SelectExercisesPage } from '@pages/select-exercises/select-exercises';
+import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SelectExercisesPage,
+    CreateWorkoutPage
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SelectExercisesPage,
+    CreateWorkoutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+    ExercisesProvider,
+    WorkoutModel,
+    Model,
+    WorkoutProvider,
   ]
 })
 export class AppModule {}

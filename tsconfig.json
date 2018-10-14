@@ -23,7 +23,9 @@
       "@pages/*": [ "pages/*" ],
       "@providers/*": [ "providers/*" ],
       "@tests/*": [ "./*" ],        
-      "@theme/*": [ "theme/*" ]
+      "@theme/*": [ "theme/*" ],
+      "@interfaces/*": [ "interfaces/*" ],
+      "@models/*": [ "models/*" ]
     },
   },
   "include": [

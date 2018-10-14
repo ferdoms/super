@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ApiProvider } from '@providers/api/api';
+import { SelectExercisesPage } from '@pages/select-exercises/select-exercises';
+import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
+// import {}
 
 @Component({
   selector: 'page-home',
@@ -8,11 +10,22 @@ import { ApiProvider } from '@providers/api/api';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public api: ApiProvider) {
-    this.api.get('exercisecategory')
-      .subscribe(data => {
-        console.log(data.results);
-      })
+  constructor(public navCtrl: NavController) {
+    // this.exercisesProvider.all()
+    //   .subscribe(data => {
+        
+    // //   })
+    // console.log(wktModel.all());
+    // wktModel.save({name:"workout d"});
+    // console.log(wktModel.getLastId());
+
+
+  }
+  exercisesPage(){
+    this.navCtrl.push(SelectExercisesPage);
   }
 
+  addWorkout(){
+    this.navCtrl.push(CreateWorkoutPage);
+  }
 }

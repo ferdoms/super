@@ -61,7 +61,8 @@ export class ApiProvider {
 get(path: string): Observable<any> {
   return this.http.get(
       `${environment.api_url}${path}`,
-      { headers: this.setHeaders() })
+      // { headers: this.setHeaders() }
+      )
       .pipe(catchError(this.handleError));
 }
 
