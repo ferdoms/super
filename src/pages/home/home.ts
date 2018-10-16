@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SelectExercisesPage } from '@pages/select-exercises/select-exercises';
 import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
+import { WorkoutProvider } from '@providers/workout/workout';
 // import {}
 
 @Component({
@@ -10,7 +11,12 @@ import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  items = [];
+  constructor(
+    public navCtrl: NavController,
+    public workoutPrv: WorkoutProvider,
+  ) {
+      
     // this.exercisesProvider.all()
     //   .subscribe(data => {
         
@@ -21,6 +27,15 @@ export class HomePage {
 
 
   }
+  ionViewWillEnter(){
+    this.workoutPrv.all()
+      .then(result => {
+        this.items = result;
+      }
+
+    )
+  }
+
   exercisesPage(){
     this.navCtrl.push(SelectExercisesPage);
   }

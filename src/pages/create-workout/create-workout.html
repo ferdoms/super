@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>createWorkout</ion-title>
+    <ion-title>New Workout</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,18 +10,26 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>Workout Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="workout.name"></ion-input>
   </ion-item>
   <ion-item>
-    <button (click)="selectExercises()">
-      Add Exercises
-    </button>
-    <ion-list no-lines *ngIf="items">
+    <div class="col">
+      <button ion-button round outline (click)="selectExercises()">
+        Add Exercises
+      </button>
+    </div>
+  </ion-item>
+
+  <ion-item  *ngIf="items.length > 0">
+    <ion-list no-lines>
       <ion-list-header>
         Exercises Selected:
       </ion-list-header>
-      <ion-item *ngFor="let item of items">{{item.name}}</ion-item>
-    </ion-list >
+      <ion-item *ngFor="let item of items">
+        <p>{{item.name}}</p>
+      </ion-item>
+  </ion-list >
+  
   </ion-item>
   <ion-fab color="primary" center bottom>
     <button ion-fab (click)="save()">

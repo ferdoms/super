@@ -9,13 +9,14 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <div ion-item *ngFor="let item of items">
+  <ion-item-group *ngFor="let group of items | groupBy: 'category'">
+    <ion-item-divider>{{ getCategory(group.key) }}</ion-item-divider>
+    <div ion-item *ngFor="let item of group.list" >
       <ion-label >
           {{ item.name }}
       </ion-label>
       <ion-checkbox color="dark" item-right [(ngModel)]="item.checked"></ion-checkbox>
     </div>
     
-  </ion-list>
+  </ion-item-group>
 </ion-content>

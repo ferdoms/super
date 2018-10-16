@@ -17,6 +17,7 @@ import { Model } from '@providers/model';
 import { WorkoutProvider } from '../providers/workout/workout';
 import { SelectExercisesPage } from '@pages/select-exercises/select-exercises';
 import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
+import { PipesModule } from '../pipes/pipes.module';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +30,7 @@ import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
   imports: [
     BrowserModule,
     HttpClientModule,
+    PipesModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
