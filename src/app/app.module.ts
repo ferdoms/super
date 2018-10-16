@@ -18,19 +18,24 @@ import { WorkoutProvider } from '../providers/workout/workout';
 import { SelectExercisesPage } from '@pages/select-exercises/select-exercises';
 import { CreateWorkoutPage } from '@pages/create-workout/create-workout';
 import { PipesModule } from '../pipes/pipes.module';
+import { ComponentsModule } from '../components/components.module';
+import { PopoverWorkoutItem } from '../components/workout-list-item/popover'
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     SelectExercisesPage,
-    CreateWorkoutPage
+    CreateWorkoutPage,
+    PopoverWorkoutItem,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     PipesModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -40,7 +45,8 @@ import { PipesModule } from '../pipes/pipes.module';
     HomePage,
     ListPage,
     SelectExercisesPage,
-    CreateWorkoutPage
+    CreateWorkoutPage,
+    PopoverWorkoutItem
   ],
   providers: [
     StatusBar,

@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Workouts</ion-title>
     <ion-fab right middle>
       <button ion-fab mini color="secondary" (click)="addWorkout()">
         <ion-icon name="add"></ion-icon>
@@ -14,15 +14,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item  *ngIf="items.length > 0">
-    <ion-list no-lines>
-      <ion-list-header>
-        <h1>Workouts:</h1>
-      </ion-list-header>
-      <ion-item *ngFor="let item of items">
-        <p>{{item.name}}</p>
-      </ion-item>
-    </ion-list >
-  </ion-item>
+  <div *ngIf="items.length > 0">  
+      <workout-list-item *ngFor="let item of items" [data]="item"></workout-list-item>
+  </div>
   <button ion-button secondary (click)="exercisesPage()">Teste Page Button</button>
 </ion-content>

@@ -21,7 +21,7 @@ export class WorkoutProvider {
   create(item:any){
     let data = [];
     this.autoIncrement().then(ai => {
-      item.id = ai;
+      item.id = ai;   
       this.storage.get(this.key)
         .then(result => {
           if(result){
